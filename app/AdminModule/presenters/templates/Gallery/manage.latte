@@ -1,0 +1,53 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 0:24, 1. 4. 2015
+*}
+{block title}Přidat obrázek{/block}
+{block content}
+	<h2>Přidat obrázek</h2>
+	<form n:name='addImagesForm' class="form-style-9">
+    	<ul>
+    		<li>
+    			<input type="file" n:name="image_1" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input type="file" n:name="image_2" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input type="file"  n:name="image_3" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input type="file"  n:name="image_4" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input n:name='add' type="submit" value="Nahrát" />
+    		</li>
+    	</ul>
+    </form>
+
+
+	<h2>Galerie: {$author} - {$catTitle} {$key}</h2>
+	<table class="table">
+    	    <tr>
+    	      <td>Počet</td>
+    	      <td>{$imagesCount}x</td>
+    	    </tr>
+    	    <tr>
+    	      <td>Velikost</td>
+    	      <td>{$imagesSize|bytes}</td>
+    	    </tr>
+    	    <tr>
+    	      <td>Stav</td>
+    	      <td class='color-{$status[0]}'>{$status[1]}</td>
+    	    </tr>
+    	</table>
+	<ul class="listImages" n:inner-foreach="$images as $image">
+    		<li>
+    			<div class='container'>
+    				<a class='open-full' href='{$basePath}/img/gallery/{$image['author']}/{$image['cat']}/{$image['img_src']}' title='Otevřít v plné velikosti' target='_blank'><img src="{$basePath}/img/gallery/{$image['author']}/{$image['cat']}/{$image['img_src']}"></a>
+    			</div>
+    			<a n:href="imageDelete!, $image['id']"><i class='fa fa-remove'></i>Odstranit</a>
+    		</li>
+    </ul>
+    <p n:if="!$images">V této galerii zatím nejsou žádné obrázky.</p>
+{/block}

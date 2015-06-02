@@ -1,0 +1,56 @@
+{block service}contact{/block}
+{block header}
+<div class="container-fluid">
+    <div class="row">
+        <h2 n:block="title">Kontaktujte nás</h2>
+    </div>
+</div>
+{/block}
+{block content}
+<div id="content">
+    <article class="contact_one">
+        <div class="row">
+            <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+            <div class="col-md-12 contact_one--name">
+                <h3><strong>Kontaktní</strong> osoba</h3>
+                <ul>
+                    <li>Petr Buček</li>
+                    <li>bucek.p@email.cz</li>
+                    <li>+420 608 415 481</li>
+                </ul>
+            </div>
+            <div class="col-md-12 contact_one--contactForm">
+                <h3>Máte přání?</h3>
+                <form n:name="contactForm">
+                    <div class="form-group">
+                        <label>Jméno</label>
+                        <input n:name="first_name" autocomplete="off" type="text" class="form-control" placeholder="Zadejte jméno...">
+                    </div>
+                    <div class="form-group">
+                        <label>Příjmení</label>
+                        <input n:name="last_name" autocomplete="off" type="text" class="form-control" placeholder="Zadejte příjmení...">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input n:name="phone" type="text" class="form-control" placeholder="Zadejte telefon...">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input n:name="email" type="text" class="form-control" placeholder="Zadejte email...">
+                    </div>
+                    <div class="form-group">
+                        <label>Váš požadavek</label>
+                        <textarea n:name="text" class="form-control" rows="6" placeholder="Zde prosím upřesněte váš dotaz, případně na jakou akci si nás chcete objednat..."></textarea>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input n:name="do_not_call" type="checkbox"> Nepřeji si být kontaktován telefonicky
+                        </label>
+                    </div>
+                    <button n:name="send" type="submit" class="btn btn-default">Odeslat</button>
+                </form>
+            </div>
+        </div>
+    </article>
+</div>
+{/block}

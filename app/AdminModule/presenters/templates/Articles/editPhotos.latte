@@ -1,0 +1,64 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 10:53, 11. 5. 2015
+*}
+{block title}Přidat obrázek{/block}
+{block content}
+	<h2>Článek: {$articleData['title']}</h2>
+	<h2>Přidat obrázek</h2>
+	<form n:name='addImagesForm' class="form-style-9">
+    	<ul>
+    		<li>
+    			<input type="file" n:name="image_1" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input type="file" n:name="image_2" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input type="file"  n:name="image_3" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input type="file"  n:name="image_4" class="field-style field-full align-none" placeholder="Subject" />
+    		</li>
+    		<li>
+    			<input n:name='add' type="submit" class="button green" value="Nahrát" />
+    		</li>
+    	</ul>
+    </form>
+
+	<h2>Galerie</h2>
+	<table class="table" n:if="$images">
+    	    <tr>
+    	      <td>Počet</td>
+    	      <td>{$imagesCount}</td>
+    	      <td></td>
+    	    </tr>
+    	    <tr>
+    	      <td>Velikost náhledů</td>
+    	      <td>{$statusThumb[0]|bytes}</td>
+    	      <td class='color-{$statusThumb[1]}'>{$statusThumb[2]}</td>
+    	    </tr>
+    	    <tr>
+               <td>Velikost uvodních fotek</td>
+               <td>{$statusCover[0]|bytes}</td>
+               <td class='color-{$statusCover[1]}'>{$statusCover[2]}</td>
+             </tr>
+             <tr>
+               <td>Velikost galerie</td>
+               <td>{$statusGallery[0]|bytes}</td>
+               <td class='color-{$statusGallery[1]}'>{$statusGallery[2]}</td>
+             </tr>
+    	</table>
+	<ul class="listImages" n:inner-foreach="$images as $image">
+        <li>
+        	<div class='container'>
+        		<a class='open-full' href='{$basePath}/img/blog/gallery/{$image['src']}' title='Otevřít v plné velikosti' target='_blank'><img src="{$basePath}/img/blog/thumb/{$image['src']}"></a>
+        	</div>
+        	<a n:href="imageDelete!, $image['id']"><i class='fa fa-remove'></i>Odstranit</a>
+
+        	<a n:if="!$image['cover']" n:href="selectAsCover!, $image['id']" class="left"><i class='fa fa-square-o'></i>Zvolit úvodní obrázek</a>
+        	<a n:if="$image['cover']" href="#current" class="left color-ok"><i class='fa fa-check-square-o color-ok'></i>Současný úvodní obrázek</a>
+        </li>
+    </ul>
+    <p n:if="!$images">V této galerii zatím nejsou žádné obrázky.</p>
+{/block}

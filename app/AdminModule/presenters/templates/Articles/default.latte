@@ -1,0 +1,30 @@
+{block content}
+	<h2 n:block="title">Články</h2>
+
+	<div class="actions">
+		<a n:href="Articles:add" class="button green"><i class="fa fa-pencil"></i>Přidat článek</a>
+	</div>
+
+	<table class="table">
+        <tr class="header">
+          <td>Titulek</td>
+          <td>Zveřejnění</td>
+          <td class="text-right">Možnosti</td>
+        </tr>
+
+        <tr n:foreach="$articles as $article">
+          <td>{$article->title}</td>
+          <td>{$article->scheduled_date|date:'%d.%m.%Y %H:00'}
+          {if $article->scheduled_date > time()}<span class="scheduled"><i class="fa fa-clock-o"></i> Plánované zveřejnění</span>{/if}</td>
+          <td class="text-right">
+            <a n:href='Articles:edit, $article->id'><i class="fa fa-edit"></i>Upravit</a>
+            <a n:href='Articles:editPhotos, $article->id'><i class="fa fa-photo"></i>Galerie</a>
+            <a n:href='Articles:remove, $article->id'><i class="fa fa-remove"></i>Smazat</a>
+          </td>
+        </tr>
+
+        <tr n:if="!$articles">
+        	<td colspan="3">Žádné články..</td>
+        </tr>
+    </table>
+{/block}

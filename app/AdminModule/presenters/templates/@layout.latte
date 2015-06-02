@@ -1,0 +1,48 @@
+{**
+* @param string   $basePath web base path
+* @param array    $flashes  flash messages
+*}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{ifset title}{include title|striptags} | {/ifset}Sweet Bike for You!</title>
+	<link rel="stylesheet" href="{$basePath}/Back-end/css/style_admin.css">
+	<link rel="stylesheet" href="{$basePath}/Back-end/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="{$basePath}/Back-end/img/fav.png">
+	{block head}{/block}
+</head>
+<body>
+<header>
+	<div class="content">
+		<a n:href='Articles:default' class="logo">Správa obsahu</a>
+		<nav n:if="$user">
+			<ul>
+				<li{ifCurrent Articles:*} class='current'{/ifCurrent}><a n:href="Articles:default"><i class="fa fa-calendar"></i>Články</a></li>
+				<li class="logOut">{$userEmail}<a n:href="Sign:out"><i class="fa fa-sign-out"></i>Odhlásit se</a></li>
+			</ul>
+		</nav>
+		<nav n:if="!$user">
+        	<ul>
+				<li class="logOut"><a n:href="Sign:in"><i class="fa fa-sign-out"></i>Přihlásit se</a></li>
+        	</ul>
+        </nav>
+	</div>
+</header>
+
+<div class="content">
+
+<div n:foreach="$flashes as $flash" n:class="alert, $flash->type">
+{if $flash->type == 'error'}<i class='fa fa-close'></i>
+{elseif $flash->type == 'info'}<i class='fa fa-exclamation-triangle'></i>
+{else}<i class='fa fa-check'></i>{/if}{$flash->message|noescape}
+</div>
+
+{include content}
+</div>
+
+{block scripts}
+{/block}
+</body>
+</html>

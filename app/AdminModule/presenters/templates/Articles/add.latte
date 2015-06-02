@@ -1,0 +1,65 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 0:22, 11. 5. 2015
+*}
+{block head}
+<script src="{$basePath}/Back-end/jquery.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="{$basePath}/Back-end/editor/summernote.css" rel="stylesheet">
+<script src="{$basePath}/Back-end/editor/summernote.js"></script>
+<script src="{$basePath}/Back-end/editor/summernote-cs-CZ.js"></script>
+{/block}
+
+{block content}
+	<h2 n:block="title">Přidat článek</h2>
+    <form n:name="newArticleForm" class="form-style-9">
+        <ul>
+            <li><label for="title" class="title">Nadpis</label><input type="text" n:name="title" autocomplete="off" id="title" class="field-style field-full align-none"></li>
+            <li><label for="text" class="title">Text článku</label><textarea class="summernote" id="text" n:name="text" placeholder="Text článku"></textarea></li>
+            <li><input type="checkbox" id="scheduled" n:name="scheduled"><label for="scheduled" class="title">Naplánovat zveřejnění</label>
+            <div id="selectDate" class="hidden">
+                <select n:name="day"></select>
+                .
+                <select n:name="month"></select>
+                .
+                <select n:name="year"></select>
+                <br/>
+                V čase
+                <br/>
+                <select n:name="time"></select>
+            </div>
+            </li>
+            <li><input type="submit" n:name="add" value="Přidat článek"></li>
+        </ul>
+    </form>
+
+{/block}
+{block scripts}
+<script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    $('.summernote').summernote({
+        height: 350,
+        minHeight: 350,
+        maxHeight: 600,
+        lang: 'cs-CZ',
+        toolbar: [
+            ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ]
+    });
+
+    $('#scheduled').click(function(){
+        if($('#scheduled').prop('checked')) {
+            $('#selectDate').hide().removeClass('hidden').slideDown(200);
+        } else {
+            $('#selectDate').slideUp(100);
+        }
+    });
+});
+</script>
+{/block}

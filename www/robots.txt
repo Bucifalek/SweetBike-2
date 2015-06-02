@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: admin/
+Disallow: app/
+Disallow: log/
+Disallow: temp/
+Disallow: vendor/

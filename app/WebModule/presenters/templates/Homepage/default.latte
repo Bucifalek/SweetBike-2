@@ -1,0 +1,105 @@
+{block service}index{/block}
+{block header}
+<div class="row fixed-width-1600">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 header_index--heading">
+        <h2 n:block="title">Se zmrzlinou přímo k Vám!</h2>
+        {*}<button><a href="#">ET ACCUMSAN MI TINCIDUNT VEL</a></button>{*}
+    </div>
+</div>
+{/block}
+{block content}
+        <div id="content">
+            <article class="first-block">
+                <div class="row fixed-width">
+                    <div class="col-md-6 first_block--text">
+                        <h2><strong>Zmrzlinové</strong> kolo</h2>
+                        <img src="{$basePath}/img/divider.png" alt="" class="divider"/>
+                        <p>Naše zmrzlinové kolo brázdí Zlín s pořádnou zásobou osvěžující chlazené pochoutky.
+                        Na výběr je vždy z šesti různých zmrzlin, snad každý si najde tu svou. Potkat nás můžete také na většině akcí, které se ve Zlíně odehrávají.
+                        Záleží na počasí, ale když nám přeje, jezdíme centrem Zlína. Zastavujeme přes víkendy, kdy stojíme u hlavní pokladny ZOO Lešná.</p>
+                        <a n:href="Gallery:default" class="button">FOTOGALERIE</a>
+                    </div>
+                    <div class="col-md-6 first_block--images">
+                        <ul class="gallery">
+                            <li class="a"><img src="{$basePath}/img/213x213(1).jpg" alt="" width="213" height="213"></li>
+                            <li class="b"><img src="{$basePath}/img/213x213(2).jpg" alt="" width="213" height="213"></li>
+                            <li class="c"><img src="{$basePath}/img/213x213(3).jpg" alt="" width="213" height="213"></li>
+                            <li class="d"><img src="{$basePath}/img/213x213(4).jpg" alt="" width="213" height="213"></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="second-block">
+                <h2>Máte speciální přání?</h2>
+                <p>Plánujete oslavu, večírek či veřejnou akci a chybí vám zmrzlina?</p>
+                <a n:href="Services:default" class="button">KONTAKTUJTE NÁS!</a>
+            </article>
+            <article class="third-block">
+                <h2><strong>Zajímavé</strong> akce</h2>
+                <img src="img/divider.png" alt="" class="divider"/>
+                <p>S našim kolem projíždíme každou zajímavou akci, která se ve Zlíně a okolí odehrává. Pro všechny máme dost, stačí se jen dívat kolem sebe a uvidíte nás.</p>
+                <p n:if="!$blog">Ale né, zatím nemáme žádný článek, který by jsme Vám mohli ukázat, brzy nějaký napíšeme.</p>
+
+                <div n:if="$blog" class="row fixed-width-1170">
+                    <div class="col-md-4">
+                        <a n:href="Blog:view, 10">
+                            <div class="blog-contribution">
+                                <img src="img/blog/post1.jpg" alt=""/>
+                                <h3>54. ročník filmového festivalu</h3>
+                                <p> Aenean egestas placerat nisi. Fusce sed libero tempus</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a n:href="Blog:view, 10">
+                            <div class="blog-contribution">
+                                <img src="img/cake2.gif" alt=""/>
+                                <h3>Blog #2</h3>
+                                <p> Aenean egestas placerat nisi. Fusce sed libero tempus</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a n:href="Blog:view, 10">
+                            <div class="blog-contribution">
+                                <img src="img/cake3.gif" alt=""/>
+                                <h3>Blog #3</h3>
+                                <p> Aenean egestas placerat nisi. Fusce sed libero tempus</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {*}<div class="row fixed-width-1170">
+                    <div class="col-md-4">
+                        <a href="">
+                            <div class="blog-contribution">
+                                <img src="img/cake1.gif" alt=""/>
+                                <h3>Blog #4</h3>
+                                <p> Aenean egestas placerat nisi. Fusce sed libero tempus</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="">
+                            <div class="blog-contribution">
+                                <img src="img/cake2.gif" alt=""/>
+                                <h3>Blog #5</h3>
+                                <p> Aenean egestas placerat nisi. Fusce sed libero tempus</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="">
+                            <div class="blog-contribution">
+                                <img src="img/cake3.gif" alt=""/>
+                                <h3>Blog #6</h3>
+                                <p> Aenean egestas placerat nisi. Fusce sed libero tempus</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>>{*}
+                <a n:if="$blog" n:href="Blog:default" class="button">VŠECHNY AKCE</a>
+            </article>
+        </div>
+{/block}

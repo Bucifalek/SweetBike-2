@@ -1,0 +1,23 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 20:40, 31. 3. 2015
+*}
+{block title}Fotogalerie{/block}
+{block content}
+	<h2>Vyberte kategorii</h2>
+	<ul class='catSelector'>
+		<li><i class="fa fa-user"></i><b>Viktor</b>
+			<ol>
+				<li><a n:href="Gallery:manage, viktor, tetovani, black-and-white">Black & White</a> ({$blackAndWhiteNum}x)</li>
+				<li><a n:href="Gallery:manage, viktor, tetovani, color">Color</a> ({$colorNum}x)</li>
+				<li><a n:href="Gallery:manage, viktor, tetovani, graphic">Graphic</a> ({$graphicNum}x)</li>
+			</ol>
+		</li>
+		<li><i class="fa fa-user"></i><b>Horst</b>
+			<ol>
+				<li><a n:href="Gallery:manage, horst, piercing">Piercing</a> ({$piercingNum}x)</li>
+				<li><a n:href="Gallery:manage, horst, tetovani">Tattoo</a> ({$tattooNum}x)</li>
+			</ol>
+		</li>
+	</ul>
+{/block}

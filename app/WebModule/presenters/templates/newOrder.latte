@@ -1,0 +1,20 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 11:15, 19. 5. 2015
+*}
+
+Nový dotaz na SweetBike4You.<br><br>
+
+Dne {$timestamp|date:'%d.%m.%Y'} v čase {$timestamp|date:'%H:%M:%S'} byl odeslán dotaz.<br/>
+<br/>
+<b>Detaily:</b><br>
+Jméno: {$first_name}<br>
+Příjmení: {$last_name}<br>
+Telefon: {$phone}
+{if $do_not_call}
+ - Žadatel si <b>nepřeje</b> být kontaktován telefonicky.
+{/if}
+<br>
+Email: {$email}<br>
+Text dotazu:<br>
+{$text|noescape|escape|nl2br}

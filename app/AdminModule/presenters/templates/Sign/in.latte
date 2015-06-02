@@ -1,0 +1,24 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 17:29, 31. 3. 2015
+*}
+{block title}Přihlásit se{/block}
+{block content}
+	<form n:name="loginForm" class="form-style-9 login-form">
+    	<ul>
+    		<li>
+    		<h2>Email</h2>
+    			<input type="text" n:name="email" class="field-style field-full align-none" placeholder="Přihlašovací email" autocomplete="off"/>
+    		</li>
+    		<li>
+    		<h2>Heslo</h2>
+    			<input type="password" n:name="password" class="field-style field-full align-none" placeholder="Heslo"  autocomplete="off"/>
+    		</li>
+    		<li>
+    			<input n:name="login" type="submit" value="Přihlásit se" />
+    		</li>
+    	</ul>
+    </form>
+{/block}
+
+{block script}{/block}

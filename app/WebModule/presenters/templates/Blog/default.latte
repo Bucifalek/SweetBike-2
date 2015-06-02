@@ -1,0 +1,74 @@
+{block service}blog{/block}
+{block header}
+<div class="container col-lg-offset-2 col-md-offset-1 ">
+        <h2 n:block="title">Zajímavé akce</h2>
+    </div>
+{/block}
+{block content}
+<div class="container">
+    <div class="row mt60 mb70" n:if="!$blog">
+        <p>Ale né, zatím nemáme žádný článek který by jsme Vám mohli ukázat, brzy nějaký napíšeme.</p>
+    </div>
+    <div class="row mt60 mb70" n:if="$blog">
+        <div class="col-sm-12 col-lg-6">
+                <div class="thumbnail margin-top">
+                    <ul class="date-block">
+                        <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 4.Června 2015</li>
+                    </ul>
+                    <a n:href="Blog:view, 10"><img class="thumbnail-img" src="img/cake3.gif" alt="..."></a>
+
+                    <div class="post">
+                        <h3 class="text-center"><a n:href="Blog:view, 10" class="redInteractive">Duis vehicula nunc dictum risus faucibus, ut dictum tellus adipiscing</a></h3>
+
+                        <p class="text-center mr20 ml20">Sed porta, nulla nec tincidunt viverra, est dui lobortis erat, ut euismod dui massa eget ipsum. Integer a lobortis mauris. In quis lectus sem. Nullam sagittis pellentesque ligula, eget elementum nibh consectetur in. Maecenas convallis accumsan hendrerit. Donec a augue velit.</p>
+                    </div>
+                </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="thumbnail margin-top">
+                <ul class="date-block">
+                    <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 4.Června 2015</li>
+                </ul>
+                <a n:href="Blog:view, 10"><img class="thumbnail-img" src="img/cake3.gif" alt="..."></a>
+
+                <div class="post">
+                    <h3 class="text-center"><a n:href="Blog:view, 10" class="redInteractive">Duis vehicula nunc dictum risus faucibus, ut dictum tellus adipiscing</a></h3>
+
+                    <p class="text-center">Sed porta, nulla nec tincidunt viverra, est dui lobortis erat, ut euismod dui massa eget ipsum. Integer a lobortis mauris. In quis lectus sem. Nullam sagittis pellentesque ligula, eget elementum nibh consectetur in. Maecenas convallis accumsan hendrerit. Donec a augue velit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+            <div class="thumbnail margin-top">
+                <ul class="date-block">
+                    <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 4.Června 2015</li>
+                </ul>
+                <a n:href="Blog:view, 10"><img class="thumbnail-img" src="img/cake3.gif" alt="..."></a>
+
+                <div class="post">
+                    <h3 class="text-center"><a n:href="Blog:view, 10" class="redInteractive">Duis vehicula nunc dictum risus faucibus, ut dictum tellus adipiscing</a></h3>
+
+                    <p class="text-center mr20 ml20">Sed porta, nulla nec tincidunt viverra, est dui lobortis erat, ut euismod dui massa eget ipsum. Integer a lobortis mauris. In quis lectus sem. Nullam sagittis pellentesque ligula, eget elementum nibh consectetur in. Maecenas convallis accumsan hendrerit. Donec a augue velit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="thumbnail margin-top">
+                <ul class="date-block">
+                    <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 4.Června 2015</li>
+                </ul>
+                <a n:href="Blog:view, 10"><img class="thumbnail-img" src="img/cake3.gif" alt="..."></a>
+
+                <div class="post">
+                    <h3 class="text-center"><a n:href="Blog:view, 10" class="redInteractive">Duis vehicula nunc dictum risus faucibus, ut dictum tellus adipiscing</a></h3>
+
+                    <p class="text-center">Sed porta, nulla nec tincidunt viverra, est dui lobortis erat, ut euismod dui massa eget ipsum. Integer a lobortis mauris. In quis lectus sem. Nullam sagittis pellentesque ligula, eget elementum nibh consectetur in. Maecenas convallis accumsan hendrerit. Donec a augue velit.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{/block}

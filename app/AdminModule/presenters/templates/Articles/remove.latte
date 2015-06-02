@@ -1,0 +1,13 @@
+{*
+ - @author Jan Kotrba <jan.kotrbaa@gmail.com>
+ - @date 11:21, 11. 5. 2015
+*}
+{block content}
+	<h2 n:block="title">Odstranit článek</h2>
+	<p>Opravdu si přejete odstranit článek <b><i>{$title}</i></b>?<br/>
+	Odstraněním přijdete i o <a n:href='Articles:editPhotos, $article'>obrázky</a> které jsou ke článku připojeny.<br/></p>
+	<div class="buttons">
+	<a n:href="Articles:default" class="button">Ne, vrátit se zpět</a>
+	<a n:href="removeArticle!, $article" class="button green right">Ano, odstranit</a>
+	</div>
+{/block}
